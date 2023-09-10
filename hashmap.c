@@ -81,11 +81,12 @@ void enlarge(HashMap * map) {
   }
   
   for (long i = 0; i < map->capacity / 2; i++) {
-        Pair * par = old_buckets[i]; // copiar buckets anteriores en el nuevo arreglo
-        if (par != NULL && par->key != NULL) {
-            insertMap(map, par->key, par->value);
-        }
+    Pair * par = old_buckets[i]; // copiar buckets anteriores en el nuevo arreglo
+    if (par != NULL && par->key != NULL) {
+      insertMap(map, par->key, par->value);
     }
+  }
+  free(old_buckets);
 }
 
 /* inicializa el arreglo de buckets con casillas nulas, inicializa el resto de variables y retorna el mapa. Inicialice el índice current a -1. */
