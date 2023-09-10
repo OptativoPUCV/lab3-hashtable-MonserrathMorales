@@ -62,6 +62,12 @@ void insertMap(HashMap * map, char * key, void * value) {
   map->size++;
 }
 
+/* recomendable mantener referenciado el arreglo *actual/antiguo* de la tabla con un puntero auxiliar. Luego, los valores de la tabla se reinicializan con un nuevo arreglo con el **doble de capacidad**. Por último los elementos del arreglo antiguo se insertan en el mapa *vacío* con el método *insertMap*.
+Cree una variable auxiliar de tipo Pair** para matener el arreglo map->buckets (*old_buckets*);
+Duplique el valor de la variable capacity.
+Asigne a map->buckets un nuevo arreglo con la nueva capacidad.
+Inicialice size a 0.
+Inserte los elementos del arreglo *old_buckets* en el mapa (use la función insertMap que ya implementó). */
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
 
