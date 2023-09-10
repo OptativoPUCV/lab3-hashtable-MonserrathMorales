@@ -229,3 +229,14 @@ Sun 10 Sep 2023 04:44:38 AM UTC:
  tests:  14|2
 total_score: 50/70
 4094160
+Sun 10 Sep 2023 04:46:10 AM UTC: 
+ hashmap.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:156:8: error: unused variable ‘i’ [-Werror=unused-variable]
+  156 |   long i = 0;
+      |        ^
+cc1: all warnings being treated as errors
+Compilation failed
+54e4078
