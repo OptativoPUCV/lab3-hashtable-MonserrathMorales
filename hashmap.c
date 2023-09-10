@@ -148,11 +148,11 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
+  map->current++;
   while(1) {
     if (map->current >= 0 && map->current < map->size) {
-        Pair* siguientePar = map->buckets[map->current];
-        map->current++;
-        return siguientePar;
+        Pair* par = map->buckets[map->current];
+        return par;
     } else {
         map->current = 0;
         return NULL;
