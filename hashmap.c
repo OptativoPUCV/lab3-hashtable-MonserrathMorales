@@ -74,8 +74,9 @@ void enlarge(HashMap * map) {
   Pair ** old_buckets = map->buckets;
   map->size = 0;
   map->capacity *= 2;
-  map->buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
+  map->buckets = (Pair **) malloc(sizeof(Pair *) * map->capacity);
   if (map->buckets == NULL) exit(EXIT_FAILURE);
+  
   for (long i = 0; i < map->capacity; i++) {
     map->buckets[i] = NULL; // inicializar nuevos buckets en NULL
   }
@@ -86,7 +87,7 @@ void enlarge(HashMap * map) {
       insertMap(map, par->key, par->value);
     }
   }
-  free(old_buckets);
+  free(old_buckets); / liberar memoria de los buckets antiguos
 }
 
 /* inicializa el arreglo de buckets con casillas nulas, inicializa el resto de variables y retorna el mapa. Inicialice el índice current a -1. */
@@ -101,7 +102,7 @@ HashMap * createMap(long capacity) {
   if(MAP->buckets == NULL) exit(EXIT_FAILURE);
   
   for(long i = 0; i < capacity; i++) {
-    MAP->buckets[i] = NULL;
+    MAP->buckets[i] = NULL; // inicializar buckets en NULL
   }
   
   return MAP;
@@ -117,7 +118,7 @@ void eraseMap(HashMap * map,  char * key) {
       return;
     }
     if(map->buckets[indice]->key != NULL && strcmp(map->buckets[indice]->key, key) == 0) {
-      map->buckets[indice]->key = NULL;
+      map->buckets[indice]->key = NULL; // si se encuentra la clave, se deja en NULL
       map->size--;
       return;
     }
@@ -166,11 +167,10 @@ Pair * nextMap(HashMap * map) {
   if (map->current == -1) {
     return NULL;
   }
-  
   for (long i = map->current + 1; i < map->capacity; i++) {
     if (map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
       map->current = i;
-      return map->buckets[i];
+      return map->buckets[i]; // se recorre desde el siguiente bucket al current y mientras este no sea una casilla nula, se actualiza el current a la posicion del bucket y se retorna el valor
     }
   }
   map->current = -1;

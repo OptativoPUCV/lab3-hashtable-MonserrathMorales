@@ -320,3 +320,13 @@ Sun 10 Sep 2023 06:26:32 AM UTC:
  tests:  17|0
 total_score: 70/70
 5764625
+Sun 10 Sep 2023 06:46:26 AM UTC: 
+ hashmap.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:90:22: error: expected expression before ‘/’ token
+   90 |   free(old_buckets); / liberar memoria de los buckets antiguos
+      |                      ^
+Compilation failed
+fbd6a27
