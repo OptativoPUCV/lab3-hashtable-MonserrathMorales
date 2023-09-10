@@ -86,9 +86,18 @@ HashMap * createMap(long capacity) {
   return MAP;
 }
 
+/*  Para hacerlo debe buscar el dato y luego *marcarlo* para que no sea válido.
+**No elimine el par**, sólo invalídelo asignando NULL a la clave (pair->key=NULL).
+Recuerde actualizar la variable size. */
 void eraseMap(HashMap * map,  char * key) {    
-
-
+  long indice = hash(key, map->capacity);
+  while(1) {
+    if(map->buckets[indice]->key != NULL && strcmp(map->buckets[indice]->key, key) == 0) {
+      map->buckets[indice]->key = NULL;
+      return;
+    }
+    indice = (indice + 1) % map->capacity;
+  }
 }
 
 /* retorna el **Pair** asociado a la clave ingresada. 
