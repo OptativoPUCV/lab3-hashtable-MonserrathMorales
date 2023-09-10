@@ -38,10 +38,23 @@ int is_equal(void* key1, void* key2){
     return 0;
 }
 
-
+/* Una casilla disponible es una casilla nula, pero también una que tenga un par inválido (key==NULL).
+No inserte claves repetidas. 
+Recuerde que el arreglo es **circular**.
+Recuerde actualizar la variable size.*/
 void insertMap(HashMap * map, char * key, void * value) {
-
-
+  
+  long indice = hash(key, map->capacity);
+  while(map->buckets[indice] != NULL && map->buckets[indice]->key != NULL) { // metodo para  evitar colision
+    indice = (indice + 1) % map->capacity;
+  }
+  Pair * par = (Pair *) malloc(sizeof(Pair));
+  if(par == NULL) exit(EXIT_FAILURE);
+  par->key = key;
+  par->value = value;
+  map->bucket[indice] = par;
+  map->current = index;
+  map->size++;
 }
 
 void enlarge(HashMap * map) {

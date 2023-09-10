@@ -1,0 +1,15 @@
+Sun 10 Sep 2023 01:37:36 AM UTC: 
+ hashmap.c | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:55:8: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘bucket’; did you mean ‘buckets’?
+   55 |   map->bucket[indice] = par;
+      |        ^~~~~~
+      |        buckets
+hashmap.c:56:16: error: assignment to ‘long int’ from ‘char * (*)(const char *, int)’ makes integer from pointer without a cast [-Werror=int-conversion]
+   56 |   map->current = index;
+      |                ^
+cc1: all warnings being treated as errors
+Compilation failed
+6b7bbe0
