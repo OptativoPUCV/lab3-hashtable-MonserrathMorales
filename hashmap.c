@@ -142,6 +142,16 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-
+  if(map->current == -1) {
     return NULL;
+  }
+  long indice = (map->current + 1) % map->capacity;
+  for (long i = indice; i != map->current; i = (i + 1) % map->capacity) {
+    if (map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
+      map->current = i;
+      return map->buckets[i]->value;
+    }
+  }
+  map->current = -1;
+  return NULL;
 }
