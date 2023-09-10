@@ -68,10 +68,16 @@ void enlarge(HashMap * map) {
 
 }
 
-
+/* inicializa el arreglo de buckets con casillas nulas, inicializa el resto de variables y retorna el mapa. Inicialice el índice current a -1. */
 HashMap * createMap(long capacity) {
+  HashMap * MAP = (HashMap *) malloc(sizeof(HashMap));
+  
+  MAP->capacity = capacity;
+  MAP->size = 0;
+  MAP->current = -1;
+  MAP->buckets = (Pair *) malloc(sizeof(Pair ) * capacity);
 
-    return NULL;
+  return MAP;
 }
 
 void eraseMap(HashMap * map,  char * key) {    

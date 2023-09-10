@@ -36,3 +36,14 @@ Sun 10 Sep 2023 01:43:52 AM UTC:
  tests:  4|5
 total_score: 20/70
 4f6ffdd
+Sun 10 Sep 2023 01:51:24 AM UTC: 
+ hashmap.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:78:16: error: assignment to ‘Pair **’ from incompatible pointer type ‘Pair *’ [-Werror=incompatible-pointer-types]
+   78 |   MAP->buckets = (Pair *) malloc(sizeof(Pair ) * capacity);
+      |                ^
+cc1: all warnings being treated as errors
+Compilation failed
+9ba7d18
