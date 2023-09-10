@@ -157,7 +157,7 @@ Pair * nextMap(HashMap * map) {
   for(long i = 0; i < map->capacity; i++) {
     if(map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
       map->current = indice;
-      return map->buckets[indice]->value;
+      return map->buckets[indice];
     }
     indice = (indice + 1) % map->capacity;
   }
