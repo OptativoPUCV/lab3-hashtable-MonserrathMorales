@@ -71,3 +71,14 @@ Sun 10 Sep 2023 01:57:33 AM UTC:
  tests:  5|4
 total_score: 30/70
 852aaf3
+Sun 10 Sep 2023 02:10:01 AM UTC: 
+ hashmap.c | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:102:8: error: unused variable ‘primerIndice’ [-Werror=unused-variable]
+  102 |   long primerIndice = indice; // como es circular, si llega al indice inicial entonces significa que no esta.
+      |        ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+7437ba3
