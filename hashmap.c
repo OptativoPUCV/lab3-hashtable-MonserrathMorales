@@ -105,14 +105,14 @@ Pair * searchMap(HashMap * map,  char * key) {
     if(map->buckets[indice] == NULL) {
       return NULL;
     }
-    if(indice == primerIndice) {
-      return NULL;
-    }
     if(map->buckets[indice]->key != NULL && strcmp(map->buckets[indice]->key,key) == 0) {
       map->current = indice;
       return map->buckets[indice];
     }
     indice = (indice + 1) % map->capacity; // metodo resulicion colisiones
+    if(indice == primerIndice) {
+      return NULL;
+    }
   }
 }
 
