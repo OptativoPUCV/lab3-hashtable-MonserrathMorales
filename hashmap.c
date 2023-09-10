@@ -43,6 +43,11 @@ No inserte claves repetidas.
 Recuerde que el arreglo es **circular**.
 Recuerde actualizar la variable size.*/
 void insertMap(HashMap * map, char * key, void * value) {
+  for(long i = 0; i < map->capacity; i++) {
+    if(map->buckets[i] != NULL && strcmp(map->buckets[i]->key, key) == 0) {
+      return; // se encuentra una existencia (clave repetida)
+    }
+  }
   
   long indice = hash(key, map->capacity);
   while(map->buckets[indice] != NULL && map->buckets[indice]->key != NULL) { // metodo para  evitar colision
