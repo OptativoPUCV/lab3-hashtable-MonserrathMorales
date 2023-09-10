@@ -75,7 +75,7 @@ HashMap * createMap(long capacity) {
   MAP->capacity = capacity;
   MAP->size = 0;
   MAP->current = -1;
-  MAP->buckets = (Pair *) malloc(sizeof(Pair ) * capacity);
+  MAP->buckets = (Pair **) malloc(sizeof(Pair *) * capacity);
 
   return MAP;
 }
