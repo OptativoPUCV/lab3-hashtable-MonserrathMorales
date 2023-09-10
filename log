@@ -193,3 +193,9 @@ hashmap.c:160:34: error: ‘Pair’ has no member named ‘indice’
       |                                  ^~
 Compilation failed
 eb99f41
+Sun 10 Sep 2023 04:32:04 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  13|2
+total_score: 50/70
+0390bbc
