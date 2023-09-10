@@ -122,3 +122,9 @@ hashmap.c:140:19: error: expected expression before ‘;’ token
       |                   ^
 Compilation failed
 cf4e06b
+Sun 10 Sep 2023 03:19:10 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  13|2
+total_score: 50/70
+ef075c2
