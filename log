@@ -161,3 +161,9 @@ hashmap.c:159:22: error: ‘idnice’ undeclared (first use in this function); d
       |                      indice
 Compilation failed
 9e71360
+Sun 10 Sep 2023 04:27:35 AM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  13|2
+total_score: 50/70
+21247e5
