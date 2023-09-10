@@ -183,3 +183,13 @@ Sun 10 Sep 2023 04:31:31 AM UTC:
  tests:  13|2
 total_score: 50/70
 49de83e
+Sun 10 Sep 2023 04:31:56 AM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:160:34: error: ‘Pair’ has no member named ‘indice’
+  160 |       return map->buckets[indice]->indice;
+      |                                  ^~
+Compilation failed
+eb99f41
