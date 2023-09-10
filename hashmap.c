@@ -69,15 +69,22 @@ Asigne a map->buckets un nuevo arreglo con la nueva capacidad.
 Inicialice size a 0.
 Inserte los elementos del arreglo *old_buckets* en el mapa (use la función insertMap que ya implementó). */
 void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
+  enlarge_called = 1; //no borrar (testing purposes)
 
-    Pair ** bucketsAnteriores = map->buckets;
-    map->size = 0;
-    map->capacity *= 2;
-    map->buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
-    if (map->buckets == NULL) exit(EXIT_FAILUR);
-    for (long i = 0; i < map->capacity; i++) {
-        map->buckets[i] = NULL; // inicializar nuevos buckets en NULL
+  Pair ** old_buckets = map->buckets;
+  map->size = 0;
+  map->capacity *= 2;
+  map->buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
+  if (map->buckets == NULL) exit(EXIT_FAILURE);
+  for (long i = 0; i < map->capacity; i++) {
+    map->buckets[i] = NULL; // inicializar nuevos buckets en NULL
+  }
+  
+  for (long i = 0; i < map->capacity / 2; i++) {
+        Pair * par = old_buckets[i]; // copiar buckets anteriores en el nuevo arreglo
+        if (par->key != NULL) {
+            insertMap(map, par->key, par->value);
+        }
     }
 }
 

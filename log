@@ -303,3 +303,8 @@ hashmap.c:74:13: error: unused variable ‘bucketsAnteriores’ [-Werror=unused-
 cc1: all warnings being treated as errors
 Compilation failed
 d185a8b
+Sun 10 Sep 2023 06:25:19 AM UTC: 
+ hashmap.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+ tests:  0|0
+5bccfc6
