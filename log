@@ -13,3 +13,14 @@ hashmap.c:56:16: error: assignment to ‘long int’ from ‘char * (*)(const ch
 cc1: all warnings being treated as errors
 Compilation failed
 6b7bbe0
+Sun 10 Sep 2023 01:39:01 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:56:16: error: assignment to ‘long int’ from ‘char * (*)(const char *, int)’ makes integer from pointer without a cast [-Werror=int-conversion]
+   56 |   map->current = index;
+      |                ^
+cc1: all warnings being treated as errors
+Compilation failed
+515e5e6

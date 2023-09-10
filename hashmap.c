@@ -52,7 +52,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   if(par == NULL) exit(EXIT_FAILURE);
   par->key = key;
   par->value = value;
-  map->bucket[indice] = par;
+  map->buckets[indice] = par;
   map->current = index;
   map->size++;
 }
