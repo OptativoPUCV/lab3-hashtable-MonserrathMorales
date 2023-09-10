@@ -146,3 +146,18 @@ Sun 10 Sep 2023 04:22:07 AM UTC:
  tests:  13|2
 total_score: 50/70
 7660dc7
+Sun 10 Sep 2023 04:27:22 AM UTC: 
+ hashmap.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:155:29: error: ‘current’ undeclared (first use in this function)
+  155 |   long primerIndice = map-0>current;
+      |                             ^~~~~~~
+hashmap.c:155:29: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:159:22: error: ‘idnice’ undeclared (first use in this function); did you mean ‘indice’?
+  159 |       map->current = idnice;
+      |                      ^~~~~~
+      |                      indice
+Compilation failed
+9e71360

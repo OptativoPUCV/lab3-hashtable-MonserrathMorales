@@ -151,13 +151,14 @@ Pair * nextMap(HashMap * map) {
   if(map->current == -1) {
     return NULL;
   }
-  long indice = (map->current + 1) % map->capacity;
-  for (long i = 0; i < map->capacity; i++) {
-    if (map->buckets[indice] != NULL && map->buckets[indice]->key != NULL) {
-        map->current = indice;
-        return map->buckets[map->current]->value;
+  
+  long primerIndice = map-0>current;
+  long indice = (primerIndice + 1) % map->capacity;
+  for(long i = 0; i < map->capacity; i++) {
+    if(map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
+      map->current = idnice;
+      return map->buckets[indice];
     }
-    indice = (indice + 1) % map->capacity;
   }
   map->current = -1;
   return NULL;
