@@ -71,7 +71,14 @@ Inserte los elementos del arreglo *old_buckets* en el mapa (use la función inse
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
 
-
+    Pair ** bucketsAnteriores = map->buckets;
+    map->size = 0;
+    map->capacity *= 2;
+    map->buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
+    if (map->buckets == NULL) exit(EXIT_FAILUR);
+    for (long i = 0; i < map->capacity; i++) {
+        map->buckets[i] = NULL; // inicializar nuevos buckets en NULL
+    }
 }
 
 /* inicializa el arreglo de buckets con casillas nulas, inicializa el resto de variables y retorna el mapa. Inicialice el índice current a -1. */
@@ -137,7 +144,6 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 /* Pair * firstMap(HashMap * map) retorna el primer **Pair** válido del arreglo buckets. Pair * nextMap(HashMap * map) retorna el siguiente **Pair** del arreglo buckets a partir índice current. Recuerde actualizar el índice (CURRENT). */
 Pair * firstMap(HashMap * map) {
-  /*
   for(long i = 0; i < map->capacity; i ++) {
     if(map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
       map->current = i;
@@ -146,32 +152,19 @@ Pair * firstMap(HashMap * map) {
   }
   map->current = -1;
   return NULL;
-  */
-  if (map == NULL || map->buckets == NULL || map->size <= 0) {
-    return NULL;
-  }
-  map->current = 0;
-  while (map->current < map->size) {
-    Pair *pair = map->buckets[map->current];
-    if (pair != NULL) {
-      return pair;
-    }
-    map->current++;
-  }
-  return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
-  if (map == NULL || map->buckets == NULL || map->size <= 0) {
+  if (map->current == -1) {
     return NULL;
   }
-  map->current++;
-  while (map->current < map->size) {
-    Pair *par = map->buckets[map->current];
-    if (par != NULL) {
-      return par;
+  
+  for (long i = map->current + 1; i < map->capacity; i++) {
+    if (map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
+      map->current = i;
+      return map->buckets[i];
     }
-    map->current++;
   }
+  map->current = -1;
   return NULL;
 }

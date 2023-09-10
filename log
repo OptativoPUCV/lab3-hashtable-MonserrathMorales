@@ -287,3 +287,19 @@ Sun 10 Sep 2023 05:02:45 AM UTC:
  tests:  12|2
 total_score: 50/70
 e688995
+Sun 10 Sep 2023 06:17:12 AM UTC: 
+ hashmap.c | 37 +++++++++++++++----------------------
+ 1 file changed, 15 insertions(+), 22 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:78:36: error: ‘EXIT_FAILUR’ undeclared (first use in this function); did you mean ‘EXIT_FAILURE’?
+   78 |     if (map->buckets == NULL) exit(EXIT_FAILUR);
+      |                                    ^~~~~~~~~~~
+      |                                    EXIT_FAILURE
+hashmap.c:78:36: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:74:13: error: unused variable ‘bucketsAnteriores’ [-Werror=unused-variable]
+   74 |     Pair ** bucketsAnteriores = map->buckets;
+      |             ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d185a8b
