@@ -330,3 +330,13 @@ hashmap.c:90:22: error: expected expression before ‘/’ token
       |                      ^
 Compilation failed
 fbd6a27
+Sun 10 Sep 2023 06:46:45 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:90:22: error: expected expression before ‘/’ token
+   90 |   free(old_buckets); /? liberar memoria de los buckets antiguos
+      |                      ^
+Compilation failed
+e508744
