@@ -246,3 +246,14 @@ Sun 10 Sep 2023 04:46:18 AM UTC:
  tests:  15|2
 total_score: 50/70
 e5a1294
+Sun 10 Sep 2023 04:50:56 AM UTC: 
+ hashmap.c | 19 ++++++-------------
+ 1 file changed, 6 insertions(+), 13 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:153:30: error: initialization of ‘Pair *’ from incompatible pointer type ‘Pair **’ [-Werror=incompatible-pointer-types]
+  153 |         Pair* siguientePar = &(map->buckets[map->current]);
+      |                              ^
+cc1: all warnings being treated as errors
+Compilation failed
+fdfdfc2
