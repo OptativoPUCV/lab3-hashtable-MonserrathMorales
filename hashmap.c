@@ -156,11 +156,11 @@ Pair * nextMap(HashMap * map) {
   long indice = (primerIndice + 1) % map->capacity;
   long i = 0;
   while (i < map->capacity) {
+    indice = (indice + 1) % map->capacity;
     if (map->buckets[indice] != NULL && map->buckets[indice]->key != NULL) {
       map->current = indice;
       return map->buckets[indice]->value;
     }
-    indice = (indice + 1) % map->capacity;
     i++;
   }
   map->current = -1;
