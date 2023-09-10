@@ -87,7 +87,7 @@ void enlarge(HashMap * map) {
       insertMap(map, par->key, par->value);
     }
   }
-  free(old_buckets); /? liberar memoria de los buckets antiguos
+  free(old_buckets); // liberar memoria de los buckets antiguos
 }
 
 /* inicializa el arreglo de buckets con casillas nulas, inicializa el resto de variables y retorna el mapa. Inicialice el índice current a -1. */
