@@ -153,7 +153,6 @@ Pair * nextMap(HashMap * map) {
   }
   
   long indice = (map->current + 1) % map->capacity;
-  long i = 0;
   for (long i = 0; i < map->capacity; i++) {
     Pair* par = map->buckets[indice];
     if (par != NULL && par->key != NULL) {

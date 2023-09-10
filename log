@@ -240,3 +240,9 @@ hashmap.c:156:8: error: unused variable ‘i’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 54e4078
+Sun 10 Sep 2023 04:46:18 AM UTC: 
+ hashmap.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  15|2
+total_score: 50/70
+e5a1294
