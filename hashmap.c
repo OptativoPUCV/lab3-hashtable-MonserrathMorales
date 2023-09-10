@@ -150,7 +150,7 @@ Pair * firstMap(HashMap * map) {
 Pair * nextMap(HashMap * map) {
   while(1) {
     if (map->current >= 0 && map->current < map->size) {
-        Pair* siguientePar = &(map->buckets[map->current]);
+        Pair* siguientePar = map->buckets[map->current];
         map->current++;
         return siguientePar;
     } else {

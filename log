@@ -257,3 +257,9 @@ hashmap.c:153:30: error: initialization of ‘Pair *’ from incompatible pointe
 cc1: all warnings being treated as errors
 Compilation failed
 fdfdfc2
+Sun 10 Sep 2023 04:51:26 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  13|2
+total_score: 50/70
+639db5f
