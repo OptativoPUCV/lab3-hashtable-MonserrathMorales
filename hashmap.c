@@ -82,7 +82,7 @@ void enlarge(HashMap * map) {
   
   for (long i = 0; i < map->capacity / 2; i++) {
         Pair * par = old_buckets[i]; // copiar buckets anteriores en el nuevo arreglo
-        if (par->key != NULL) {
+        if (par != NULL && par->key != NULL) {
             insertMap(map, par->key, par->value);
         }
     }
