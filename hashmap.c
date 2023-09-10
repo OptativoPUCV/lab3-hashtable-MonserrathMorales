@@ -137,6 +137,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 /* Pair * firstMap(HashMap * map) retorna el primer **Pair** válido del arreglo buckets. Pair * nextMap(HashMap * map) retorna el siguiente **Pair** del arreglo buckets a partir índice current. Recuerde actualizar el índice (CURRENT). */
 Pair * firstMap(HashMap * map) {
+  /*
   for(long i = 0; i < map->capacity; i ++) {
     if(map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
       map->current = i;
@@ -144,6 +145,19 @@ Pair * firstMap(HashMap * map) {
     }
   }
   map->current = -1;
+  return NULL;
+  */
+  if (map == NULL || map->buckets == NULL || map->size <= 0) {
+    return NULL;
+  }
+  map->current = 0;
+  while (map->current < map->size) {
+    Pair *pair = map->buckets[map->current];
+    if (pair != NULL) {
+      return pair;
+    }
+    map->current++;
+  }
   return NULL;
 }
 
