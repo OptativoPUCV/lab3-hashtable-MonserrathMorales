@@ -154,6 +154,7 @@ Pair * nextMap(HashMap * map) {
         map->current++;
         return siguientePar;
     } else {
+        map->current = 0;
         return NULL;
     }
   }
