@@ -65,3 +65,9 @@ hashmap.c:80:33: error: ‘EXIT_FAILUR’ undeclared (first use in this function
 hashmap.c:80:33: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 0643d1b
+Sun 10 Sep 2023 01:57:33 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  5|4
+total_score: 30/70
+852aaf3
